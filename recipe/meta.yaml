@@ -1,4 +1,4 @@
-{% set version = '0.4.1' %}
+{% set version = "0.5.0" %}
 
 package:
   name: r-ggridges
@@ -9,7 +9,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/ggridges_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/ggridges/ggridges_{{ version }}.tar.gz
-  sha256: 03d2013df6adf07c9741d4476df96865b878a88359763ac36b98aa86591cca4d
+  sha256: 124bc84044e56728fa965682f8232fc868f2af7d3eb7276f6b0df53be8d2dbfe
 
 build:
   number: 0
@@ -24,12 +24,14 @@ requirements:
     - r-ggplot2 >=2.2.0
     - r-plyr >=1.8.0
     - r-scales >=0.4.1
+    - r-withr >=2.1.1
 
   run:
     - r-base
     - r-ggplot2 >=2.2.0
     - r-plyr >=1.8.0
     - r-scales >=0.4.1
+    - r-withr >=2.1.1
 
 test:
   commands:
