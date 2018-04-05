@@ -24,12 +24,14 @@ requirements:
     - r-ggplot2 >=2.2.0
     - r-plyr >=1.8.0
     - r-scales >=0.4.1
+    - r-withr >=2.1.1
 
   run:
     - r-base
     - r-ggplot2 >=2.2.0
     - r-plyr >=1.8.0
     - r-scales >=0.4.1
+    - r-withr >=2.1.1
 
 test:
   commands:
