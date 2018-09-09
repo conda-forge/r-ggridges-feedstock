@@ -1,4 +1,6 @@
-{% set version = "0.5.0" %}
+{% set version = '0.5.0' %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-ggridges
@@ -7,12 +9,13 @@ package:
 source:
   fn: ggridges_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/ggridges_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/ggridges/ggridges_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/ggridges_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/ggridges/ggridges_{{ version }}.tar.gz
   sha256: 124bc84044e56728fa965682f8232fc868f2af7d3eb7276f6b0df53be8d2dbfe
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -20,12 +23,13 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-ggplot2 >=2.2.0
     - r-plyr >=1.8.0
     - r-scales >=0.4.1
     - r-withr >=2.1.1
-
   run:
     - r-base
     - r-ggplot2 >=2.2.0
@@ -35,7 +39,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('ggridges')"  # [not win]
+    - $R -e "library('ggridges')"           # [not win]
     - "\"%R%\" -e \"library('ggridges')\""  # [win]
 
 about:
@@ -44,10 +48,15 @@ about:
   summary: Ridgeline plots provide a convenient way of visualizing changes in distributions over
     time or space. This package enables the creation of such plots in 'ggplot2'.
   license_family: GPL2
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-2'  # [win]
 
 extra:
   recipe-maintainers:
+    - rvalieris
+    - johanneskoester
     - bgruening
     - daler
-    - johanneskoester
-    - rvalieris
+    - jdblischak
+    - cbrueffer
+    - dbast
