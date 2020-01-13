@@ -16,7 +16,7 @@ source:
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -26,13 +26,13 @@ requirements:
 
   host:
     - r-base
-    - r-ggplot2 >=2.2.0
+    - r-ggplot2 >=3.0.0
     - r-plyr >=1.8.0
     - r-scales >=0.4.1
     - r-withr >=2.1.1
   run:
     - r-base
-    - r-ggplot2 >=2.2.0
+    - r-ggplot2 >=3.0.0
     - r-plyr >=1.8.0
     - r-scales >=0.4.1
     - r-withr >=2.1.1
@@ -43,7 +43,8 @@ test:
     - "\"%R%\" -e \"library('ggridges')\""  # [win]
 
 about:
-  home: https://github.com/clauswilke/ggridges
+  home: https://wilkelab.org/ggridges
+  dev_url: https://github.com/wilkelab/ggridges
   license: GPL-2
   summary: Ridgeline plots provide a convenient way of visualizing changes in distributions over
     time or space. This package enables the creation of such plots in 'ggplot2'.
@@ -54,9 +55,3 @@ extra:
   recipe-maintainers:
     - conda-forge/r
     - rvalieris
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
