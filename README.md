@@ -5,11 +5,11 @@ Home: https://wilkelab.org/ggridges
 
 Package license: GPL-2
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ggridges-feedstock/blob/master/LICENSE.txt)
 
 Summary: Ridgeline plots provide a convenient way of visualizing changes in distributions over time or space. This package enables the creation of such plots in 'ggplot2'.
 
-
+Development: https://github.com/wilkelab/ggridges
 
 Current build status
 ====================
