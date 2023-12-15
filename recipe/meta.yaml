@@ -1,4 +1,4 @@
-{% set version = "0.5.4" %}
+{% set version = "0.5.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggridges_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggridges/ggridges_{{ version }}.tar.gz
-  sha256: 2bf71c2034804cec637e6748dc51d8cadad01d3ea4d14ace754327f082e8d851
+  sha256: 7577a43824ff413f5499fce22b2218268177d5867adf8cb885a19c760b5e75a1
 
 build:
   noarch: generic
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
