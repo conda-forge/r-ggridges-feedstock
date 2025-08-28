@@ -1,4 +1,4 @@
-{% set version = "0.5.6" %}
+{% set version = "0.5.7" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggridges_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggridges/ggridges_{{ version }}.tar.gz
-  sha256: efccaa309a150d11c6b402b912e618ea041f25cca3101f32cd821a6f41684e35
+  sha256: fcba89ffa3a31edfb3eeea249a78997150d9e01888dbe2015fec310709681133
 
 build:
   noarch: generic
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
